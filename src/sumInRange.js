@@ -5,5 +5,12 @@
  * @returns {number}
  */
 module.exports.sumInRange = function sumInRange(start, end) {
-  throw new Error('Not implemented');
+  // Mеньшее и большее число
+  const min = Math.min(start, end);
+  const max = Math.max(start, end);
+  // Kоличество чисел в диапазоне
+  const n = max - min + 1;
+  // Сумма по формуле арифметической прогрессии
+  const sum = (n / 2) * (min + max);
+  return sum;
 };
