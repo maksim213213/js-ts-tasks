@@ -5,5 +5,7 @@
  * @returns {boolean}
  */
 module.exports.hasProperty = function hasProperty(object, prop) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  return prop in object;
 };
+//все объекты в JavaScript наследуют свойство __proto__ от своего прототипа,
+//таким оброзом in находит свойство __proto__ в цепочке прототипов объекта, переданного в функцию.

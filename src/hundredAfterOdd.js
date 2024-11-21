@@ -3,6 +3,4 @@
  * @param {Object} arr
  * @returns {Object}
  */
-module.exports.hundredAfterOdd = function hundredAfterOdd(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
-};
+module.exports.hundredAfterOdd = function hundredAfterOdd(arr) {};

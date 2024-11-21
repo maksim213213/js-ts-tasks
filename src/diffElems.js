@@ -4,5 +4,11 @@
  * @returns {number}
  */
 module.exports.diffElems = function diffElems(arr) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  if (!arr || arr.length === 0) {
+    // !arr - check for falsy
+    return 0;
+  }
+
+  const uniqueElements = new Set(arr); // discards duplicates
+  return uniqueElements.size;
 };
