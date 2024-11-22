@@ -4,5 +4,23 @@
  * @returns {function}
  */
 module.exports.primeNumbers = function primeNumbers(highestNumber) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  function isPrime(num) {
+    for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
+      if (num % i == 0) return false;
+    }
+
+    return true;
+  }
+
+  const allPrimes = [];
+  for (let num = 2; num <= highestNumber; num++) {
+    if (isPrime(num)) {
+      allPrimes.push(num);
+    }
+  }
+
+  // Возвращаем функцию для поиска простых чисел в заданном диапазоне
+  return function findPrimesInRange(start, end) {
+    return allPrimes.filter(prime => prime >= start && prime <= end);
+  };
 };
