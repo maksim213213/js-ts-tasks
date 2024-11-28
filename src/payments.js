@@ -23,5 +23,17 @@
  * @returns {function}
  */
 module.exports.payments = function payments(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+  return function (income, debts) {
+    let totalIncome = 0;
+    let totalDebts = 0;
+
+    for (const key in income) {
+      totalIncome += income[key];
+    }
+    for (const key in debts) {
+      totalDebts += debts[key];
+    }
+    const balance = totalIncome - totalDebts;
+    return balance;
+  };
 };

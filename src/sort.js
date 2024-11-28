@@ -9,5 +9,15 @@
  * @returns {function}
  */
 module.exports.sort = function sort(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+  return function (...args) {
+    return args.sort((a, b) => {
+      if (typeof a === 'string' && typeof b === 'string') {
+        // Sort strings in descending order
+        return b.localeCompare(a);
+      } else {
+        // Sort numbers in ascending order
+        return a - b;
+      }
+    });
+  };
 };
