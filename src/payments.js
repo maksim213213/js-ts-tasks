@@ -22,7 +22,7 @@
  * @param {{ sumAllObjectProperties: function() }} TestUtils
  * @returns {function}
  */
-module.exports.payments = function payments(TestUtils) {
+module.exports.payments = function payments() {
   return function (income, debts) {
     let totalIncome = 0;
     let totalDebts = 0;
@@ -32,7 +32,6 @@ module.exports.payments = function payments(TestUtils) {
     for (const key in debts) {
       totalDebts += debts[key];
     }
-    const result = totalIncome - totalDebts;
-    return result;
+    return totalIncome - totalDebts;
   };
 };
