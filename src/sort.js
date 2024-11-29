@@ -9,15 +9,7 @@
  * @returns {function}
  */
 module.exports.sort = function sort(TestUtils) {
-  return function (...args) {
-    return args.sort((a, b) => {
-      if (typeof a === 'string' && typeof b === 'string') {
-        // Sort strings in descending order
-        return b.localeCompare(a);
-      } else {
-        // Sort numbers in ascending order
-        return a - b;
-      }
-    });
+  return function sortArguments(...args) {
+    return args.sort(TestUtils.sortComparator);
   };
 };

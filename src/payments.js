@@ -33,7 +33,7 @@ module.exports.payments = function payments(TestUtils) {
     for (const key in debts) {
       totalDebts += debts[key];
     }
-    const balance = totalIncome - totalDebts;
-    return balance;
+    const result = totalIncome - totalDebts;
+    return result;
   };
 };
