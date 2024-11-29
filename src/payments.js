@@ -26,7 +26,6 @@ module.exports.payments = function payments(TestUtils) {
   return function (income, debts) {
     let totalIncome = 0;
     let totalDebts = 0;
-
     for (const key in income) {
       totalIncome += income[key];
     }
