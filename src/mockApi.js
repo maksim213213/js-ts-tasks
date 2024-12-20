@@ -6,5 +6,15 @@
  *@response {object}
  */
 module.exports.mockApi = function mockApi(response, delay) {
-  throw new Error('Not implemented'); // remove me and write your code
+  if (typeof delay !== 'number' || delay < 0) {
+    throw new TypeError('Delay must be a non-negative number');
+  }
+
+  return function () {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(response);
+      }, delay);
+    });
+  };
 };
